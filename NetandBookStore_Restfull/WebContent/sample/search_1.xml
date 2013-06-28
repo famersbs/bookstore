@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+	<books>
+		<book>
+			<title>제목</title>
+			<id>문서 ID</id>
+			<link>/NetandBookStore_Restfull/book/...</link>
+			<highlight>
+				<![CDATA[ 블라블라블라 ]]>
+			</highlight>
+		</book>
+		<book>
+			<title>제목2</title>
+			<id>문서 ID</id>
+			<link>/NetandBookStore_Restfull/book/...</link>
+			<highlight>
+				<![CDATA[ 블라블라블라 ]]>
+			</highlight>
+		</book>
+		<book>
+			<title>제목3</title>
+			<id>문서 ID</id>
+			<link>/NetandBookStore_Restfull/book/...</link>
+			<highlight>
+				<![CDATA[ 블라블라블라 ]]>
+			</highlight>
+		</book>
+		<book>
+			<title>제목4</title>
+			<id>문서 ID</id>
+			<link>/NetandBookStore_Restfull/book/...</link>
+			<highlight>
+				<![CDATA[ 블라블라블라 ]]>
+			</highlight>
+		</book>
+	</books>
+</result>

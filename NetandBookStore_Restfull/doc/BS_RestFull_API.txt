@@ -1,0 +1,52 @@
+
+ * 검색 요청
+ 
+ 	- 요청
+ 		url : /NetandBookStore_Restfull/book/?keyword=[검색 문자열]
+ 		TYPE : GET
+ 
+ 	- result
+ 		<result>
+ 			<books>
+ 				<book>
+ 					<title>제목</title>
+ 					<id>문서 ID</id>
+ 					<link>/NetandBookStore_Restfull/book/...</link>
+ 					<highlight>
+ 						<![CDATA[ 블라블라블라 ]]>
+ 					</highlight>
+ 					...
+ 				</book>
+ 			</books>
+ 		</result>
+ 		
+  * 업로드
+  	
+  	- 요청
+  		url : /NetandBookStore_Restfull/book
+  		TYPE : POST
+  		변수
+  			title 		- 문서 제목
+  			book		- 문서 파일
+  	
+  	- 결과
+  	
+  		<result>
+  			<result>SUCCESS</result>  	<!-- FALSE -->
+  			<id>문서 ID<id>
+  			<reason></reason>			<!-- 결과 사유 문장 -->
+  		</result>
+  		
+ 
+  * 다운로드
+  	
+  	- 요청
+  		url : /NetandBookStore_Restfull/download/파일명
+  		TYPE : GET
+  		
+  	- 결과
+  		파일 다운로드
+  	
+  		
+  		
+  	

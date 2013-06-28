@@ -12,18 +12,16 @@
   <listener>
     <listener-class>com.netand.bookstore.startup</listener-class>
   </listener>
-
-  <!-- 저장소 위치 설정 -->
   <context-param>
-  	<param-name>store_path</param-name>
-	<param-value>/Users/famersbs/Documents/workspace/NetandBookStore/store/</param-value>
+    <param-name>store_path</param-name>
+    <param-value>/Users/famersbs/Documents/workspace/NetandBookStore/store/</param-value>
   </context-param>
   <context-param>
-  	<param-name>index_path</param-name>
-	<param-value>/Users/famersbs/Documents/workspace/NetandBookStore/lucene/</param-value>
+    <param-name>index_path</param-name>
+    <param-value>/Users/famersbs/Documents/workspace/NetandBookStore/lucene/</param-value>
   </context-param>
   <context-param>
-  	<param-name>work_thread_cnt</param-name>
-	<param-value>4</param-value>
+    <param-name>work_thread_cnt</param-name>
+    <param-value>4</param-value>
   </context-param>
 </web-app>
