@@ -36,7 +36,14 @@ $(function() {
 		//event
 		onKeyPressKeyword: function(){
 			//console.log("sbs " + this.input.val() );
+			if( "" == this.input.val() ) return;
+			
 			app.bookList.search_keyword( this.input.val() );
+			
+			this.$("#keyword_div").removeClass("initial");
+			this.$("#keyword_div").addClass("active");
+			this.$el.addClass( "top" );
+			
 			
 		}
 
