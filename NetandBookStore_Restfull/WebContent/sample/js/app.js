@@ -10,9 +10,15 @@ $(function() {
 		defaults: {
 			title: '',
 			book_id: '',
-			book_link: '',
+			link: '',
 			highlight: ''
-		}
+		},
+		
+		parse:function (response) {
+	        //response.id = response._id;
+	        this.highlight = jQuery.base64.decode(response.highlight);
+	        return response;
+	    }
 	});
 	
 	////////////////////////////////////////////////////////////////
@@ -20,7 +26,20 @@ $(function() {
 	var BSList = Backbone.Collection.extend({
 
 		// Reference to this collection's model.
-		model: app.BSElement
+		model: app.BSElement,
+		
+		url:"./book/search?keyword=Sample",
+		
+		parse:function (response) {
+	        //response.id = response._id;
+	       // this.highlight = jQuery.base64.decode(response.highlight);
+			console.log( response );
+	        return response;
+	    },
+	    
+	    search_keyword:function( keyword ){
+	    	
+	    }
 		
 	});
 
@@ -35,18 +54,25 @@ $(function() {
 		// Instead of generating a new element, bind to the existing skeleton of
 		// the App already present in the HTML.
 		el: '#result',
-
 		initialize: function() {
 			
-			jQuery.get("./search_1.xml", function (data, textStatus, jqXHR) {
-			    console.log("Get resposne:");
-			    console.dir(data);
-			    console.log(textStatus);
-			    console.dir(jqXHR);
-			});
+			this.collection = app.BSLists;
 			
-			
-			
+			this.collection.fetch(
+					{ 
+					    url: "./book/search?keyword=Sample", 
+					    success: function() {
+					          console.log("JSON file load was successful", app.BSLists);
+					      },
+					    error: function(){
+					       console.log('There was some error in loading and processing the JSON file');
+					       console.log( arguments );
+						},
+						//emulateJSON:true,
+						//emulateHTTP:true
+					  }
+					);
+
 			this.render();
 		},
 
@@ -58,10 +84,7 @@ $(function() {
 		}
 
 	});
-
-
 	
-
 });
 
 $(function(){
@@ -69,4 +92,6 @@ $(function(){
 	// Kick things off by creating the **App**.
 	new app.AppView();
 	
+	
+
 });

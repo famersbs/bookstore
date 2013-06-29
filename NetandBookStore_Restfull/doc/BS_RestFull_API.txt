@@ -2,23 +2,17 @@
  * 검색 요청
  
  	- 요청
- 		url : /NetandBookStore_Restfull/book/?keyword=[검색 문자열]
+ 		url : /NetandBookStore_Restfull/book/search/?keyword=[검색 문자열]
  		TYPE : GET
  
  	- result
- 		<result>
- 			<books>
- 				<book>
- 					<title>제목</title>
- 					<id>문서 ID</id>
- 					<link>/NetandBookStore_Restfull/book/...</link>
- 					<highlight>
- 						<![CDATA[ 블라블라블라 ]]>
- 					</highlight>
- 					...
- 				</book>
- 			</books>
- 		</result>
+ 		[ {
+ 			title: 'wpahr',
+ 			doc_id: '111',
+ 			link: 'aaa',
+ 			highlight: 'aaa'
+ 			}, ...
+ 		]
  		
   * 업로드
   	
@@ -46,7 +40,3 @@
   		
   	- 결과
   		파일 다운로드
-  	
-  		
-  		
-  	

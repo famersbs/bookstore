@@ -1,8 +1,8 @@
 <%@page import="com.netand.bookstore.worker.WorkManager"%><%@page import="java.io.FileNotFoundException"%><%@page import="java.net.URLEncoder"%><%@page import="java.io.File"%><%@page import="java.io.FileInputStream"%><%@page import="java.io.PrintStream"%><%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%><%
 
-	String filename = new String( request.getParameter("filename").getBytes("ISO-8859-1"), "utf-8" );
- 
+	//String filename = new String( request.getParameter("filename").getBytes("ISO-8859-1"), "utf-8" );
+    String filename = request.getParameter("filename");
     String realPath = WorkManager.getStorePath() + filename;
 
 	/** 다운로드 구현시 주의 사항
@@ -38,10 +38,10 @@
   		response.setContentType("application/octet-stream");
   
   		if(strClient.indexOf("MSIE 5.5") > -1) {
-       		response.setHeader("Content-Disposition", "filename=" + new String(filename.getBytes(),"ISO-8859-1") + ";");
+       		response.setHeader("Content-Disposition", "filename=" + filename.trim() + ";");
   		} else {
        		response.setHeader("Content-Disposition", 
-       				"attachment;filename=" +  new String(filename.getBytes("EUC-KR"),"ISO-8859-1") + ";");
+       				"attachment;filename=" + filename.trim() + ";");
   		}
 		response.setHeader("Content-Length", ""+ifilesize );
   		outs = response.getOutputStream();
