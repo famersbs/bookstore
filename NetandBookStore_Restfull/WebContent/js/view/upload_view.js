@@ -19,7 +19,7 @@ $(function() {
 	    },
 		
 		// 단일 아이템에 대한 템플릿 함수를 캐쉬한다.
-	    template: _.template( $('#upload_template').html() ),
+	    template: _.template( $('#upload_modal_template').html() ),
 	    
 	    
 		initialize: function() {
